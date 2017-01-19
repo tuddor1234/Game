@@ -1,4 +1,5 @@
 #Greenfoot project file
+class.MyWorld.image=ball.png
 class.MyWorld.superclass=greenfoot.World
 editor.fx.0.height=700
 editor.fx.0.width=700
