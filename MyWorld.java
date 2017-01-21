@@ -17,6 +17,9 @@ public class MyWorld extends World
     {    
            super(600, 400, 1); 
            Player myPlayer = new Player();
-           addObject(myPlayer,24,24);
+           addObject(myPlayer,getWidth()/2,getHeight()/2);
+           
+           Ground ground = new Ground();
+           addObject(ground,getWidth()/2,getHeight()/2+50);
     }
 }

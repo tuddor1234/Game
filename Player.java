@@ -8,26 +8,50 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
-    /**
-     * Act - do whatever the Player wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private int movingSpeed = 5 ;
+    private int fallSpeed = 0;
+    private int acceleration =2;
+    
     public void act() 
     {
        Movement();
+       CheckFall();
     }
     
     public void Movement()
     {
+        // mergi la dreapta
         if(Greenfoot.isKeyDown("d"))
         {
-            move(5);
+            move(movingSpeed);
         }
+        //mergi la stanga
         else if(Greenfoot.isKeyDown("a"))
         {
-            move(-5);
+            move(-movingSpeed);
         }
+        
+    }
+    //cade 
+    public void Fall()
+    {
+        setLocation( getX(), getY()+ fallSpeed );
+        fallSpeed = fallSpeed + acceleration;
+    }
+    // este pe pamant
+    public boolean onGround()
+    {
+        Object under = getOneObjectAtOffset(0, getImage().getHeight()/2 + 2, Ground.class);
+        return under != null;
     }
     
-    
+    public void CheckFall()
+    {
+        if (onGround()) {
+            fallSpeed = 0;
+        }
+        else {
+            Fall();
+        }
+    }
 }
