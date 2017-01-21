@@ -11,6 +11,7 @@ public class Player extends Actor
     private int movingSpeed = 5 ;
     private int fallSpeed = 0;
     private int acceleration =2;
+    private int jumpHeight = 20;
     
     public void act() 
     {
@@ -21,16 +22,25 @@ public class Player extends Actor
     public void Movement()
     {
         // mergi la dreapta
-        if(Greenfoot.isKeyDown("d"))
+        if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
         {
             move(movingSpeed);
+            if((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) &&  onGround() ==true) Jump();
         }
         //mergi la stanga
-        else if(Greenfoot.isKeyDown("a"))
+        else if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))
         {
             move(-movingSpeed);
-        }
+            if((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) && onGround() ==true) Jump();
         
+        }
+        else if((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) && onGround() ==true) Jump();
+    }
+    //sare
+    public void Jump()
+    {
+        fallSpeed = -jumpHeight;
+        Fall(); 
     }
     //cade 
     public void Fall()
@@ -44,7 +54,7 @@ public class Player extends Actor
         Object under = getOneObjectAtOffset(0, getImage().getHeight()/2 + 2, Ground.class);
         return under != null;
     }
-    
+    //vezi daca e pe pamant
     public void CheckFall()
     {
         if (onGround()) {

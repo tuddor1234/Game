@@ -15,7 +15,7 @@ public class MyWorld extends World
      */
     public MyWorld()
     {    
-           super(600, 400, 1); 
+           super(1000, 600, 1); 
            Player myPlayer = new Player();
            addObject(myPlayer,getWidth()/2,getHeight()/2);
            
