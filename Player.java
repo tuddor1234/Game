@@ -12,6 +12,7 @@ public class Player extends Actor
     private int fallSpeed = 0;
     private int acceleration =2;
     private int jumpHeight = 20;
+    public  int direction = 1;
     
     public void act() 
     {
@@ -25,16 +26,18 @@ public class Player extends Actor
         if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
         {
             move(movingSpeed);
-            if((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) &&  onGround() ==true) Jump();
+            direction = 2;
         }
         //mergi la stanga
         else if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))
         {
             move(-movingSpeed);
-            if((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) && onGround() ==true) Jump();
-        
+            direction = 1;
+            
         }
-        else if((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) && onGround() ==true) Jump();
+        if((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) && onGround() ==true) Jump();
+        if("space".equals(Greenfoot.getKey())) Fire();
+        
     }
     //sare
     public void Jump()
@@ -64,4 +67,13 @@ public class Player extends Actor
             Fall();
         }
     }
+    
+    public void Fire()
+    {
+        Projectile projectile = new Projectile();
+        getWorld().addObject(projectile,getX(), getY());
+        if(direction == 1) projectile.setRotation(180);
+        else projectile.setRotation(0);
+    }
+    
 }
