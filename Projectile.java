@@ -17,16 +17,31 @@ public class Projectile extends Actor
     {
       move(10);
       Actor enemy = getOneIntersectingObject(Enemy.class);
+      
       if(enemy != null)
       {
-          World MyWorld = getWorld();
+          World MyWorld = getWorld();  
           MyWorld.removeObject(enemy);
           MyWorld.removeObject(this);
           
-          
       }
-     
+      else if(atWorldEdge() == true)
+            {
+                World MyWorld = getWorld();  
+                  MyWorld.removeObject(this);
+            }
+   
       
-  
-    }    
+    }
+    
+    
+    public boolean atWorldEdge()    
+    {    
+       if(getX() < 10 || getX() > getWorld().getWidth() - 10)    
+           return true;    
+       if(getY() < 10 || getY() > getWorld().getHeight() - 10)    
+           return true;    
+        return false;    
+     }   
+    
 }

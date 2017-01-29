@@ -12,6 +12,10 @@ public class Player extends Actor
     private int fallSpeed = 0;
     private int acceleration =2;
     private int jumpHeight = 20;
+   
+    
+    
+    
     public  int direction = 1;
     
     

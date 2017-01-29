@@ -8,6 +8,7 @@ public class Enemy extends Actor
 {
     private int fallSpeed = 0;
     private int acceleration = 2;
+    public int life =3;
     
     public void act() 
     {
@@ -36,4 +37,8 @@ public class Enemy extends Actor
             Fall();
         }
     }
+    
+    
+    
+    
 }
