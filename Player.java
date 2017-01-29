@@ -24,6 +24,7 @@ public class Player extends Actor
        setImage("flower.png");
        Movement();
        CheckFall();
+       backToStart();
     }
     
     public void Movement()
@@ -82,5 +83,16 @@ public class Player extends Actor
         if(direction == 1) projectile.setRotation(180);
         else projectile.setRotation(0);
     }
+    
+    public void backToStart()
+    {
+                
+        
+       
+         if(getY() < 10 || getY() > getWorld().getHeight() - 10)    
+            setLocation(getWorld().getWidth()/2,getWorld().getHeight()/2);
+    }
+
+  
     
 }

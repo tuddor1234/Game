@@ -28,7 +28,7 @@ public class Projectile extends Actor
       else if(atWorldEdge() == true)
             {
                 World MyWorld = getWorld();  
-                  MyWorld.removeObject(this);
+                MyWorld.removeObject(this);
             }
    
       

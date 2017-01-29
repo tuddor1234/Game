@@ -38,6 +38,10 @@ public class Enemy extends Actor
         }
     }
     
+    public boolean Dead()
+    {
+        return true;
+    }
     
     
     

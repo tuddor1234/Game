@@ -16,7 +16,10 @@ public class MyWorld extends World
     public MyWorld()
     {    
            super(1200, 600, 1); 
+           
            Player myPlayer = new Player();
+            
+           
            addObject(myPlayer,getWidth()/2,getHeight()/2);
            
            Ground ground = new Ground();
@@ -24,10 +27,6 @@ public class MyWorld extends World
      
            
            
-           for(int i=1;i<=5;i++)
-           {
-               Enemy enemy = new Enemy();
-               addObject(enemy,getWidth()*2/4+i*100,getHeight()*3/4);
-           }
+          
     }
 }
