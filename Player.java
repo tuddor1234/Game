@@ -14,8 +14,10 @@ public class Player extends Actor
     private int jumpHeight = 20;
     public  int direction = 1;
     
+    
     public void act() 
     {
+       setImage("flower.png");
        Movement();
        CheckFall();
     }
@@ -27,13 +29,14 @@ public class Player extends Actor
         {
             move(movingSpeed);
             direction = 2;
+          
         }
         //mergi la stanga
         else if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))
         {
             move(-movingSpeed);
             direction = 1;
-            
+          
         }
         if((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) && onGround() ==true) Jump();
         if("space".equals(Greenfoot.getKey())) Fire();
@@ -54,7 +57,7 @@ public class Player extends Actor
     // este pe pamant
     public boolean onGround()
     {
-        Object under = getOneObjectAtOffset(0, getImage().getHeight()/2 + 2, Ground.class);
+        Object under = getOneObjectAtOffset(0, getImage().getHeight()/2 + 10, Ground.class);
         return under != null;
     }
     //vezi daca e pe pamant
