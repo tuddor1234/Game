@@ -8,25 +8,33 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
+    ScoreCounter sc = new ScoreCounter();  
+    Player myPlayer = new Player();
+    Ground ground = new Ground();
+    StartPoint sp = new StartPoint();
+    
     public MyWorld()
     {    
            super(1200, 600, 1); 
            
-           Player myPlayer = new Player();
-            
-           
-           addObject(myPlayer,getWidth()/2,getHeight()/2);
-           
-           Ground ground = new Ground();
+           addObject(sp,getWidth()/2,getHeight()/2);
+           addObject(myPlayer,sp.getX(),sp.getY());
+           addObject(sc,100,40);
            addObject(ground,getWidth()/2,getHeight());
-     
            
-           
-          
     }
+    
+    public ScoreCounter getScoreCounter()
+    {
+        return sc;
+    }
+    
+    public StartPoint getStartPoint()
+    {
+        return sp;
+    }
+    
+    
+    
+    
 }

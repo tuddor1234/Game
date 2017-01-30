@@ -13,10 +13,10 @@ public class Player extends Actor
     private int acceleration =2;
     private int jumpHeight = 20;
     private int BulletsLeft = 12;
-    
-    
-    
+   
     public  int direction = 1;
+    
+    
     
     
     public void act() 
@@ -86,11 +86,13 @@ public class Player extends Actor
     
     public void backToStart()
     {
-                
-        
-       
-         if(getY() < 10 || getY() > getWorld().getHeight() - 10)    
-            setLocation(getWorld().getWidth()/2,getWorld().getHeight()/2);
+         World world = getWorld();
+         MyWorld mw = (MyWorld) world;
+         int x = mw.getStartPoint().getX();
+         int y = mw.getStartPoint().getY();
+     
+         if(getY() < 10 || getY() > world.getHeight() - 10)    
+            setLocation(x,y);
     }
 
   

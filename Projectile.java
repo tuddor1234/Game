@@ -20,9 +20,13 @@ public class Projectile extends Actor
       Actor ground = getOneIntersectingObject(Ground.class);
       if(enemy != null)
       {
-          World MyWorld = getWorld();  
-          MyWorld.removeObject(enemy);
-          MyWorld.removeObject(this);
+          World world = getWorld();  
+          world.removeObject(enemy);
+          world.removeObject(this);
+         
+          MyWorld mw = (MyWorld) world;
+          ScoreCounter sc = mw.getScoreCounter();
+          sc.AddScore();
           
       }
       else if(atWorldEdge() == true || ground != null)
