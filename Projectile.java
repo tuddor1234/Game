@@ -17,7 +17,7 @@ public class Projectile extends Actor
     {
       move(10);
       Actor enemy = getOneIntersectingObject(Enemy.class);
-      
+      Actor ground = getOneIntersectingObject(Ground.class);
       if(enemy != null)
       {
           World MyWorld = getWorld();  
@@ -25,7 +25,7 @@ public class Projectile extends Actor
           MyWorld.removeObject(this);
           
       }
-      else if(atWorldEdge() == true)
+      else if(atWorldEdge() == true || ground != null)
             {
                 World MyWorld = getWorld();  
                 MyWorld.removeObject(this);

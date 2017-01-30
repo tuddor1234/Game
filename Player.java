@@ -12,7 +12,7 @@ public class Player extends Actor
     private int fallSpeed = 0;
     private int acceleration =2;
     private int jumpHeight = 20;
-   
+    private int BulletsLeft = 12;
     
     
     
@@ -44,8 +44,8 @@ public class Player extends Actor
           
         }
         if((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) && onGround() ==true) Jump();
-        if("space".equals(Greenfoot.getKey())) Fire();
-        
+        if("space".equals(Greenfoot.getKey()) && BulletsLeft > 0) {Fire(); BulletsLeft--;}
+        else if(Greenfoot.isKeyDown("r")) BulletsLeft = 12;
     }
     //sare
     public void Jump()
