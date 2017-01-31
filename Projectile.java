@@ -8,14 +8,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Projectile extends Actor
 {
+    // private 
+    private int fallSpeed = 0;
+    private int acceleration = 1;
+    // public 
+    
+    //altele
     Player player = new Player();
  
-    public int projectileLife = 10;
     
     
     public void act() 
     {
-      move(10);
+       move(10);
+     
+      
       Actor enemy = getOneIntersectingObject(Enemy.class);
       Actor ground = getOneIntersectingObject(Ground.class);
       if(enemy != null)
@@ -39,7 +46,6 @@ public class Projectile extends Actor
       
     }
     
-    
     public boolean atWorldEdge()    
     {    
        if(getX() < 10 || getX() > getWorld().getWidth() - 10)    
@@ -49,4 +55,6 @@ public class Projectile extends Actor
         return false;    
      }   
     
+     
+     
 }

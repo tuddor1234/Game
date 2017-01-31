@@ -30,6 +30,10 @@ public class Player extends Actor
     public void Movement()
     {
         // mergi la dreapta
+        
+         World world = getWorld();
+         MyWorld mw = (MyWorld) world;
+        
         if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
         {
             move(movingSpeed);
@@ -44,8 +48,24 @@ public class Player extends Actor
           
         }
         if((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) && onGround() ==true) Jump();
-        if("space".equals(Greenfoot.getKey()) && BulletsLeft > 0) {Fire(); BulletsLeft--;}
-        else if(Greenfoot.isKeyDown("r")) BulletsLeft = 12;
+        if("space".equals(Greenfoot.getKey()) && BulletsLeft > 0)
+        {
+            Fire(); BulletsLeft--; 
+            ICON x = mw.ReturnCurrentBullet(BulletsLeft);
+            world.removeObject(x);
+        
+        }
+        if(Greenfoot.isKeyDown("r") && BulletsLeft != 12) 
+        {
+            while(BulletsLeft > 0)
+            {
+             BulletsLeft--; 
+             ICON x = mw.ReturnCurrentBullet(BulletsLeft);
+             world.removeObject(x);
+            }
+            BulletsLeft = 12;
+            mw.Reload(); 
+        }
         
         setCounter(BulletsLeft);
         
@@ -93,7 +113,6 @@ public class Player extends Actor
          MyWorld mw = (MyWorld) world;
          int x = mw.getStartPoint().getX();
          int y = mw.getStartPoint().getY();
-     
          if(getY() < 10 || getY() > world.getHeight() - 10)    
             setLocation(x,y);
     }
@@ -102,11 +121,13 @@ public class Player extends Actor
     {
         World world = getWorld();
         MyWorld mw = (MyWorld) world;
-        
         ScoreCounter bulletCounter = mw.getBulletCounter();
         bulletCounter.setValue(value);
-       
+        
     }
+    
+    
+    
   
     
 }

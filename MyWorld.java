@@ -15,16 +15,21 @@ public class MyWorld extends World
     Ground ground = new Ground();
     StartPoint sp = new StartPoint();
     
+    ICON[] bullets = new ICON[12];
+    
+    
     public MyWorld()
     {    
            super(1200, 600, 1); 
-           
+        
            addObject(sp,getWidth()/2,getHeight()/2);
            addObject(myPlayer,sp.getX(),sp.getY());
            addObject(sc,100,40);
            addObject(bulletCounter,getWidth()-100,40);
            addObject(ground,getWidth()/2,getHeight());
            
+           Reload();
+  
     }
     
     public ScoreCounter getScoreCounter()
@@ -43,7 +48,20 @@ public class MyWorld extends World
         return sp;
     }
     
+    public void Reload()
+    {
+         for(int i=0;i<bullets.length;i++)
+           {
+               bullets[i] = new ICON();
+               bullets[i].setImage("ball.png");
+               addObject(bullets[i],100+i*5,100);
+           }
+    }
     
+    public ICON ReturnCurrentBullet(int i)
+    {
+        return bullets[i];
+    }
     
     
 }
