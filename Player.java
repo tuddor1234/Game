@@ -21,7 +21,7 @@ public class Player extends Actor
     
     public void act() 
     {
-       setImage("flower.png");
+      
        Movement();
        CheckFall();
        backToStart();
@@ -85,7 +85,7 @@ public class Player extends Actor
     // este pe pamant
     public boolean onGround()
     {
-        Object under = getOneObjectAtOffset(0, getImage().getHeight()/2 + 10, Ground.class);
+        Object under = getOneObjectAtOffset(0, getImage().getHeight()/3, Ground.class);
         return under != null;
     }
     //vezi daca e pe pamant

@@ -21,7 +21,7 @@ public class MyWorld extends World
     public MyWorld()
     {    
            super(1200, 600, 1); 
-        
+           setPaintOrder(Player.class,Enemy.class,Ground.class);
            addObject(sp,getWidth()/2,getHeight()/2);
            addObject(myPlayer,sp.getX(),sp.getY());
            addObject(sc,100,40);
