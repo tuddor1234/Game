@@ -26,7 +26,8 @@ public class Projectile extends Actor
          
           MyWorld mw = (MyWorld) world;
           ScoreCounter sc = mw.getScoreCounter();
-          sc.AddScore();
+          sc.add(10);
+          
           
       }
       else if(atWorldEdge() == true || ground != null)
@@ -34,7 +35,7 @@ public class Projectile extends Actor
                 World MyWorld = getWorld();  
                 MyWorld.removeObject(this);
             }
-   
+      
       
     }
     

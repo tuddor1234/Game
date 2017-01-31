@@ -46,6 +46,9 @@ public class Player extends Actor
         if((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) && onGround() ==true) Jump();
         if("space".equals(Greenfoot.getKey()) && BulletsLeft > 0) {Fire(); BulletsLeft--;}
         else if(Greenfoot.isKeyDown("r")) BulletsLeft = 12;
+        
+        setCounter(BulletsLeft);
+        
     }
     //sare
     public void Jump()
@@ -95,6 +98,15 @@ public class Player extends Actor
             setLocation(x,y);
     }
 
+    public void setCounter(int value)
+    {
+        World world = getWorld();
+        MyWorld mw = (MyWorld) world;
+        
+        ScoreCounter bulletCounter = mw.getBulletCounter();
+        bulletCounter.setValue(value);
+       
+    }
   
     
 }

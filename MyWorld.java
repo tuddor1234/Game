@@ -9,6 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     ScoreCounter sc = new ScoreCounter();  
+    ScoreCounter bulletCounter = new ScoreCounter();
+    
     Player myPlayer = new Player();
     Ground ground = new Ground();
     StartPoint sp = new StartPoint();
@@ -20,6 +22,7 @@ public class MyWorld extends World
            addObject(sp,getWidth()/2,getHeight()/2);
            addObject(myPlayer,sp.getX(),sp.getY());
            addObject(sc,100,40);
+           addObject(bulletCounter,getWidth()-100,40);
            addObject(ground,getWidth()/2,getHeight());
            
     }
@@ -28,6 +31,12 @@ public class MyWorld extends World
     {
         return sc;
     }
+     
+    public ScoreCounter getBulletCounter()
+    {
+        return bulletCounter;
+    }
+    
     
     public StartPoint getStartPoint()
     {
