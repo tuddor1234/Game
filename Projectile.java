@@ -25,10 +25,11 @@ public class Projectile extends Actor
       
       Actor enemy = getOneIntersectingObject(Enemy.class);
       Actor ground = getOneIntersectingObject(Ground.class);
+      
       if(enemy != null)
       {
           World world = getWorld();  
-          world.removeObject(enemy);
+          ApplyDamage(enemy);
           world.removeObject(this);
          
           MyWorld mw = (MyWorld) world;
@@ -55,6 +56,11 @@ public class Projectile extends Actor
         return false;    
      }   
     
+     public void ApplyDamage(Actor enemy)
+     {
+         World world = getWorld();
+         world.removeObject(enemy);
+     }
      
      
 }

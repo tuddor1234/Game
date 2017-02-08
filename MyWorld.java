@@ -1,18 +1,14 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 /**
- * Write a description of class MyWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Class MyWorld: sample world to show how to make use of my world super-class SWorld
  */
-public class MyWorld extends World
+public class MyWorld extends SWorld
 {
+    Player player = new Player();
     ScoreCounter sc = new ScoreCounter();  
     ScoreCounter bulletCounter = new ScoreCounter();
     
-    Player myPlayer = new Player();
-    Ground ground = new Ground();
     StartPoint sp = new StartPoint();
     
     ICON[] bullets = new ICON[12];
@@ -20,19 +16,22 @@ public class MyWorld extends World
     
     public MyWorld()
     {    
-           super(1200, 600, 1); 
-           setPaintOrder(Player.class,Enemy.class,Ground.class);
-           addObject(sp,getWidth()/2,getHeight()/2);
-           addObject(myPlayer,sp.getX(),sp.getY());
-           addObject(sc,100,40);
-           addObject(bulletCounter,getWidth()-100,40);
-           addObject(ground,getWidth()/2,getHeight());
-           
-           Reload();
-  
+        super(1000, 500, 1, 5000);
+        addObject(sp,500 ,200); 
+        setPaintOrder(Player.class, Enemy.class, Ground.class);
+        setMainActor(player,sp.getX(),sp.getY());
+        
+        
+        addObject(new Ground(),502,400);
+        addObject(sc,100,40,false);
+        addObject(bulletCounter,getWidth()-100,40,false);
+        
+         
+        Reload();
+        
     }
     
-    public ScoreCounter getScoreCounter()
+   public ScoreCounter getScoreCounter()
     {
         return sc;
     }
@@ -42,8 +41,7 @@ public class MyWorld extends World
         return bulletCounter;
     }
     
-    
-    public StartPoint getStartPoint()
+     public StartPoint getStartPoint()
     {
         return sp;
     }
@@ -54,7 +52,7 @@ public class MyWorld extends World
            {
                bullets[i] = new ICON();
                bullets[i].setImage("ball.png");
-               addObject(bullets[i],100+i*5,100);
+               addObject(bullets[i],100+i*5,100,false);
            }
     }
     
@@ -62,6 +60,7 @@ public class MyWorld extends World
     {
         return bullets[i];
     }
+    
     
     
 }

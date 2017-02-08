@@ -24,7 +24,7 @@ public class Enemy extends Actor
     // este pe pamant
     public boolean onGround()
     {
-        Object under = getOneObjectAtOffset(2, getImage().getHeight()/2 + 10, Ground.class);
+        Object under = getOneObjectAtOffset(2, getImage().getHeight()/3, Ground.class);
         return under != null;
     }
     //vezi daca e pe pamant

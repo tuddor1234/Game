@@ -5,4 +5,6 @@ comment1.params=
 comment1.target=void\ act()
 comment2.params=
 comment2.target=boolean\ atWorldEdge()
-numComments=3
+comment3.params=enemy
+comment3.target=void\ ApplyDamage(greenfoot.Actor)
+numComments=4
