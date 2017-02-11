@@ -13,4 +13,6 @@ comment5.params=
 comment5.target=void\ Reload()
 comment6.params=i
 comment6.target=ICON\ ReturnCurrentBullet(int)
-numComments=7
+comment7.params=
+comment7.target=Player\ getPlayer()
+numComments=8

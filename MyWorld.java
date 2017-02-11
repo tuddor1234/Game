@@ -10,22 +10,28 @@ public class MyWorld extends SWorld
     ScoreCounter bulletCounter = new ScoreCounter();
     
     StartPoint sp = new StartPoint();
-    
+
     ICON[] bullets = new ICON[12];
     
-    
+    GreenfootSound BkMusic = new GreenfootSound("BkMusic.mp3");
+     
     public MyWorld()
     {    
-        super(1000, 500, 1, 5000);
+        super(1300, 800, 1,5000);
+        
+        //BkMusic.playLoop();
+        
         addObject(sp,500 ,200); 
-        setPaintOrder(Player.class, Enemy.class, Ground.class);
-        setMainActor(player,sp.getX(),sp.getY());
+        
+        setPaintOrder(Player.class, Enemy.class,Projectile.class, Ground.class);
+        setMainActor(player,250,getHeight()/2);
         
         
-        addObject(new Ground(),502,400);
+        addObject(new Ground(),getWidth()/2 , getHeight()-50);
         addObject(sc,100,40,false);
-        addObject(bulletCounter,getWidth()-100,40,false);
-        
+        //addObject(bulletCounter,getWidth()-100,40,false);
+  
+        //addObject(new Enemy(),sp.getX(),sp.getY());
          
         Reload();
         
@@ -51,8 +57,9 @@ public class MyWorld extends SWorld
          for(int i=0;i<bullets.length;i++)
            {
                bullets[i] = new ICON();
-               bullets[i].setImage("ball.png");
-               addObject(bullets[i],100+i*5,100,false);
+               bullets[i].setImage("Egg.png");
+               bullets[i].turn(-90);
+               addObject(bullets[i],getWidth()-150+i*10,100,false);
            }
     }
     
@@ -61,6 +68,10 @@ public class MyWorld extends SWorld
         return bullets[i];
     }
     
+    public Player getPlayer()
+    {
+        return player;
+    }
     
     
 }

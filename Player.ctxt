@@ -3,10 +3,11 @@ comment0.target=Player
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Player\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=void\ act()
-comment10.params=
-comment10.target=void\ backToStart()
-comment11.params=value
-comment11.target=void\ setCounter(int)
+comment10.params=value
+comment10.target=void\ setCounter(int)
+comment10.text=\r\n\ \ \ \ public\ void\ backToStart()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ World\ world\ \=\ getWorld();\r\n\ \ \ \ \ \ \ \ \ MyWorld\ mw\ \=\ (MyWorld)\ world;\r\n\ \ \ \ \ \ \ \ \ int\ x\ \=\ mw.getStartPoint().getX();\r\n\ \ \ \ \ \ \ \ \ int\ y\ \=\ mw.getStartPoint().getY();\r\n\ \ \ \ \ \ \ \ \ if(getY()\ <\ 10\ ||\ getY()\ >\ world.getHeight()\ -\ 10)\ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ setLocation(x,y);\r\n\ \ \ \ }\r\n
+comment11.params=
+comment11.target=int\ getBulletsLeft()
 comment2.params=
 comment2.target=void\ Movement()
 comment3.params=
