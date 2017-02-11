@@ -9,14 +9,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class GameOverScreen extends World
 {
 
-    /**
-     * Constructor for objects of class GameOverScreen.
-     * 
-     */
+    private GreenfootSound GameOverMusic = new GreenfootSound("GameOver.mp3");
+    
+    
     public GameOverScreen()
     {   
         super(1300, 800, 1); 
+        
+        //GameOverMusic.play();
+        
         addObject(new QuitButton(), this.getWidth() - 300, this.getHeight() -150);
         addObject(new TryAgainButton() , 350 , this.getHeight() -150);
+        
+        
     }
 }

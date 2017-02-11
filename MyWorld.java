@@ -12,22 +12,31 @@ public class MyWorld extends SWorld
     StartPoint sp = new StartPoint();
 
     ICON[] bullets = new ICON[12];
+   
+    Ground ground = new Ground();
+    Hill hill = new Hill();
+    
     
     GreenfootSound BkMusic = new GreenfootSound("BkMusic.mp3");
      
     public MyWorld()
     {    
-        super(1300, 800, 1,5000);
+        super(1300, 800, 1,10000);
         
-        //BkMusic.playLoop();
+      // BkMusic.playLoop();
         
-        addObject(sp,500 ,200); 
+       // addObject(sp,500 ,200); 
         
         setPaintOrder(Player.class, Enemy.class,Projectile.class, Ground.class);
         setMainActor(player,250,getHeight()/2);
         
+        //make the ground
+        addObject(ground,0,getHeight()-50);
+        int groundWidth = ground.getImage().getWidth();
+       
         
-        addObject(new Ground(),getWidth()/2 , getHeight()-50);
+        
+        
         addObject(sc,100,40,false);
         //addObject(bulletCounter,getWidth()-100,40,false);
   
@@ -59,7 +68,7 @@ public class MyWorld extends SWorld
                bullets[i] = new ICON();
                bullets[i].setImage("Egg.png");
                bullets[i].turn(-90);
-               addObject(bullets[i],getWidth()-150+i*10,100,false);
+               addObject(bullets[i],100+i*10,100,false);
            }
     }
     

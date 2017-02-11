@@ -9,12 +9,11 @@ import java.awt.Color;
 public class TryAgainButton extends Button
 {
     private static final Color transparent = new Color(0,0,0,0);
-    private GreenfootImage image = new GreenfootImage("Button.png");
+    private GreenfootImage image = new GreenfootImage("Button1.png");
     public TryAgainButton()
     {
-        GreenfootImage text = new GreenfootImage("Try Again" , 22, Color.BLACK,transparent );
-        image.drawImage(text, (image.getWidth()-text.getWidth())/2, 
-                        (image.getHeight()-text.getHeight())/2);
+        GreenfootImage text = new GreenfootImage("Try Again" , 30, Color.BLACK,transparent );
+        image.drawImage(text, (image.getWidth())/2 ,(image.getHeight())/2-4);
         setImage(image);
     }
     

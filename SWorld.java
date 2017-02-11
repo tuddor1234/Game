@@ -101,7 +101,7 @@ public class SWorld extends World
             System.out.println("");
             return;
         }
-        super.addObject(main, getWidth()/2, getHeight()/2);
+        super.addObject(main,0, getHeight()-200);
         mainActor = main;
         xRange=(int)Math.min(xRange, getWidth());
         yRange=(int)Math.min(yRange, getHeight());

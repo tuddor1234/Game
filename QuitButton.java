@@ -9,12 +9,11 @@ import java.awt.Color;
 public class QuitButton extends Button
 {
     private static final Color transparent = new Color(0,0,0,0);
-    private GreenfootImage image = new GreenfootImage("Button.png");
+    private GreenfootImage image = new GreenfootImage("Button2.png");
     public QuitButton()
     {
-        GreenfootImage text = new GreenfootImage("Quit Game" , 22, Color.BLACK,transparent );
-        image.drawImage(text, (image.getWidth()-text.getWidth())/2, 
-                        (image.getHeight()-text.getHeight())/2);
+        GreenfootImage text = new GreenfootImage("Quit Game" , 30, Color.BLACK,transparent );
+        image.drawImage(text, (image.getWidth())/2 - 100, (image.getHeight()-4)/2);
         setImage(image);
     }
     

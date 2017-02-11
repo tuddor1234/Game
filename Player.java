@@ -74,7 +74,7 @@ public class Player extends Actor
             if(animationCounter % 5 == 0)
             {
                 animateRight();
-               animationCounter=1;
+                animationCounter=1;
             }
         
         }
@@ -86,7 +86,7 @@ public class Player extends Actor
             if(animationCounter % 5 == 0)
             {
                 animateLeft();
-               animationCounter=1;
+                animationCounter=1;
             }
         }
         else 
@@ -216,8 +216,8 @@ public class Player extends Actor
     // este pe pamant
     public boolean onGround()
     {
-        Object under = getOneObjectAtOffset(0, getImage().getHeight()/2, Ground.class);
-        Object blocked = getOneObjectAtOffset(0, getImage().getWidth()/2, Capita.class);
+        Object under = getOneObjectAtOffset(0, getImage().getHeight()/3, Ground.class);
+        Object blocked = getOneObjectAtOffset(0, getImage().getWidth()/3, Capita.class);
         return under != null;
     }
     //vezi daca e pe pamant

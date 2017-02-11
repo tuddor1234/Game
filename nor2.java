@@ -1,19 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Hill here.
+ * Write a description of class nor2 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Hill extends ICON
+public class nor2 extends Nori
 {
     /**
-     * Act - do whatever the Hill wants to do. This method is called whenever
+     * Act - do whatever the nor2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-       
+        // Add your action code here.
     }    
 }
