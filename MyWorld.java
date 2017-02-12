@@ -27,17 +27,17 @@ public class MyWorld extends SWorld
         
        // addObject(sp,500 ,200); 
         
-        setPaintOrder(Player.class, Enemy.class,Projectile.class, Ground.class);
+        setPaintOrder(Player.class, Enemy.class,Projectile.class,Food.class, Ground.class);
         setMainActor(player,250,getHeight()/2);
         
         //make the ground
-        addObject(ground,0,getHeight()-50);
-        int groundWidth = ground.getImage().getWidth();
-       
+        addObject(ground,getWidth()/2,getHeight()-50);
+        //addObject(new Ground(), getWidth()/2+1300, getHeight()-50);
         
         
         
-        addObject(sc,100,40,false);
+        
+        addObject(sc,200,70,false);
         //addObject(bulletCounter,getWidth()-100,40,false);
   
         //addObject(new Enemy(),sp.getX(),sp.getY());

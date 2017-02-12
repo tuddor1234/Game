@@ -14,6 +14,17 @@ public class Fork extends ThingsThatCanKillYou
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+        HitThePlayer();
+    }
+    
+     public void HitThePlayer()
+    {
+       World world = getWorld();
+       MyWorld mw = (MyWorld) world;
+       Player player = mw.getPlayer();
+       if(this.getOneIntersectingObject(Player.class) != null)
+       {
+           Greenfoot.setWorld(new GameOverScreen());
+       }
+    }
 }

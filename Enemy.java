@@ -29,6 +29,7 @@ public class Enemy extends ThingsThatCanKillYou
     {
       CheckFall();
       GoToPlayer();
+      HitThePlayer();
       animationCounter++;
     }    
     
@@ -49,7 +50,7 @@ public class Enemy extends ThingsThatCanKillYou
                         setImage(E3_R);
                       
                     }
-                   else if(frame == 2) 
+                   else if(frame == 4) 
                    {
                        setImage(E2_R);    
                         frame=1;
@@ -72,10 +73,14 @@ public class Enemy extends ThingsThatCanKillYou
             }
                  else if(frame == 3) 
                     {
-                        setImage(E3_L);
+                          setImage(E3_L);
+                    }
+                       else if(frame==4)
+                       {
+                       setImage(E2_L);
                         frame=1;
                         return;
-                    }
+                        }
         frame++;
     }
     
@@ -135,6 +140,24 @@ public class Enemy extends ThingsThatCanKillYou
          }
         
         
+    }
+    
+     public void HitThePlayer()
+    {
+       if(Killed() == true)
+       {
+           Greenfoot.setWorld(new GameOverScreen());
+       }
+    }
+    
+    public boolean Killed()
+    {
+        World world = getWorld();
+       MyWorld mw = (MyWorld) world;
+       Player player = mw.getPlayer();
+       if(this.getOneIntersectingObject(Player.class) != null) return true;
+       return false;
+       
     }
     
     

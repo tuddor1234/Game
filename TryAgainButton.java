@@ -21,6 +21,10 @@ public class TryAgainButton extends Button
     {
        if(Greenfoot.mouseClicked(this))
        {
+           World world = getWorld();
+           GameOverScreen go = (GameOverScreen) world;
+           GreenfootSound bkMusic = go.getBackgroundMusic();
+           bkMusic.pause();
            Greenfoot.setWorld(new MyWorld());
            
        }

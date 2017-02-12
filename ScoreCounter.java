@@ -72,9 +72,9 @@ public class ScoreCounter extends Actor
     private void updateImage()
     {
         GreenfootImage image = new GreenfootImage(background);
-        GreenfootImage text = new GreenfootImage("" + value, 22, Color.BLACK, transparent);
-        image.drawImage(text, (image.getWidth()-text.getWidth())/2, 
-                        (image.getHeight()-text.getHeight())/2);
+        GreenfootImage text = new GreenfootImage("" + value, 30, Color.BLACK, transparent);
+        image.drawImage(text, (image.getWidth()-35)/2, 
+                        (image.getHeight()-40)/2);
         setImage(image);
     }
 }

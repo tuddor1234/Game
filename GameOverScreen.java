@@ -16,11 +16,18 @@ public class GameOverScreen extends World
     {   
         super(1300, 800, 1); 
         
-        //GameOverMusic.play();
+        //GameOverMusic.playLoop();
         
         addObject(new QuitButton(), this.getWidth() - 300, this.getHeight() -150);
         addObject(new TryAgainButton() , 350 , this.getHeight() -150);
         
         
     }
+    
+    
+    public GreenfootSound getBackgroundMusic()
+    {
+        return GameOverMusic;
+    }
+    
 }

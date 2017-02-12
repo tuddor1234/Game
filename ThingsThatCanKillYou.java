@@ -21,9 +21,11 @@ public class ThingsThatCanKillYou extends Actor
     {
        World world = getWorld();
        MyWorld mw = (MyWorld) world;
-       Player myPlayer = mw.getPlayer();
-      
-   
+       Player player = mw.getPlayer();
+       if(this.getOneIntersectingObject(Player.class) != null)
+       {
+           Greenfoot.setWorld(new GameOverScreen());
+       }
     }
     
 }

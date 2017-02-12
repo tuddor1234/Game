@@ -39,7 +39,7 @@ public class Player extends Actor
     private GreenfootSound jumpSound = new GreenfootSound("Jump.mp3");
    
     
-    
+   
     
     
    
@@ -111,6 +111,7 @@ public class Player extends Actor
             if(direction ==1) setImage(idle_R);
             else setImage(idle_L);
                         
+           
             Fire(); BulletsLeft--; 
            ICON x = mw.ReturnCurrentBullet(BulletsLeft);
            world.removeObject(x);
@@ -216,8 +217,8 @@ public class Player extends Actor
     // este pe pamant
     public boolean onGround()
     {
-        Object under = getOneObjectAtOffset(0, getImage().getHeight()/3, Ground.class);
-        Object blocked = getOneObjectAtOffset(0, getImage().getWidth()/3, Capita.class);
+        Object under = getOneObjectAtOffset(0, getImage().getHeight()/2, Ground.class);
+        Object blocked = getOneObjectAtOffset(0, getImage().getWidth()/2, Capita.class);
         return under != null;
     }
     //vezi daca e pe pamant
