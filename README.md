@@ -10,4 +10,4 @@ This is an old game I created in 2016 in a game engine called Greenfoot. It was 
 
 ![alt text](https://github.com/tuddor1234/Game/blob/master/4.png)
 
-If you want to run it, make sure you have ![greenfoot](https://www.greenfoot.org/download) and java installed. 
+If you want to run it, make sure you have [greenfoot](https://www.greenfoot.org/download) and java installed. 
